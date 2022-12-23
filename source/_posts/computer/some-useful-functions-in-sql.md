@@ -12,6 +12,9 @@ category:
 ## combine two varchar
 `concat('a', 'b')`
 in *group*: `group_concate(distinct name order by name separator ',')`
+
+<!-- more -->
+
 ## upper case and lower case
 `upper('a')` and `lower('a')`
 ## select char in varchar

@@ -15,6 +15,8 @@ It is a good code-writing habit for code understanding and development.
 
 Over time, code evolves, whereas code comments go stale.
 
+<!-- more -->
+
 # & Document
 
 Self-documenting code does not obviate the need for documentation. Consider README files and Swagger docs. We still need those. Also, sometimes it might still make sense to leave code comments or drop a link to a confluence doc in the code in the code.

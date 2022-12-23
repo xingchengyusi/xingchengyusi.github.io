@@ -13,6 +13,8 @@ category:
 
 It is an industry convention.
 
+<!-- more -->
+
 Major.Minor.Patch: `1.2.3`
 
 - Major: breaking changes of API.

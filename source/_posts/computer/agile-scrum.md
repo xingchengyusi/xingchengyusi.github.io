@@ -24,6 +24,8 @@ In a waterfall, every stage depends on the previous stage.
 
 Agile is more **flexibility, adaptivity, and error tolerable**.
 
+<!-- more -->
+
 # Types
 
 Some agile types include Scrum, Lean, and Extreme Programming (XP). This course talks about scrum.

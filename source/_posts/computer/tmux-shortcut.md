@@ -19,6 +19,8 @@ start new with session name:
 
     tmux new -s myname
 
+<!-- more -->
+
 attach:
 
     tmux a  #  (or at, or attach)

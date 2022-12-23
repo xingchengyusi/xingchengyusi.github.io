@@ -25,6 +25,8 @@ Combined by a forger network and an expert network.
     - Input: image (real or synthetic)
     - Output: predict where this image comes from.
 
+<!-- more -->
+
 > What is a latent space?
 >
 > A vector space that cannot be observed.

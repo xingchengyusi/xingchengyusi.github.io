@@ -15,6 +15,8 @@ category:
 
 And use `PATH DEFAULT=${PATH}:/path/to/file` to add a new one.
 
+<!-- more -->
+
 # pwd
 
 shows the current dictionary.

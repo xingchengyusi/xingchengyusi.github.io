@@ -20,6 +20,8 @@ lang: en
 git commit --amend
 ```
 
+<!-- more -->
+
 # Hooks
 
 Like a real hook, Git Hook will run a specific script before or after important git actions, such as committing, rebasing, and pushing.

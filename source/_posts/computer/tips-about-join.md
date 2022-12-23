@@ -12,6 +12,8 @@ category:
 ![](https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png)
 `left` and `right` join are outer join.
 
+<!-- more -->
+
 What happens after left joins? Example: [[183. Customers Who Never Order]]
 ```sql
 Create table If Not Exists Customers (id int, name varchar(255))

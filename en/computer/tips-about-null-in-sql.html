@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Selectshould use is null, not &#x3D; null because NULL is a special marker to indicate a data value does not exist, not a data value. So that cannot use &#x3D; to check for equality. Output NULLTo output n">
+    <meta name="description" content="Selectshould use is null, not &#x3D; null because NULL is a special marker to indicate a data value does not exist, not a data value. So that cannot use &#x3D; to check for equality.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tips About NULL in SQL">
 <meta property="og:url" content="http://localhost:4000/en/computer/tips-about-null-in-sql.html">
 <meta property="og:site_name" content="XCYS">
-<meta property="og:description" content="Selectshould use is null, not &#x3D; null because NULL is a special marker to indicate a data value does not exist, not a data value. So that cannot use &#x3D; to check for equality. Output NULLTo output n">
+<meta property="og:description" content="Selectshould use is null, not &#x3D; null because NULL is a special marker to indicate a data value does not exist, not a data value. So that cannot use &#x3D; to check for equality.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-18T05:34:16.000Z">
-<meta property="article:modified_time" content="2022-12-18T05:34:41.024Z">
+<meta property="article:modified_time" content="2022-12-23T22:10:45.906Z">
 <meta property="article:author" content="Xingchengyusi">
 <meta property="article:tag" content="sql">
 <meta property="article:tag" content="data science">
@@ -192,9 +192,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-12-17 21:34:16 / Modified: 21:34:41" itemprop="dateCreated datePublished" datetime="2022-12-17T21:34:16-08:00">2022-12-17</time>
+      <time title="Created: 2022-12-17 21:34:16" itemprop="dateCreated datePublished" datetime="2022-12-17T21:34:16-08:00">2022-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-12-23 14:10:45" itemprop="dateModified" datetime="2022-12-23T14:10:45-08:00">2022-12-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -217,6 +223,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h2><p>should use <code>is null</code>, not <code>= null</code> because NULL is a special marker to indicate a data value does not exist, not a data value. So that cannot use &#x3D; to check for equality.</p>
+<span id="more"></span>
+
 <h2 id="Output-NULL"><a href="#Output-NULL" class="headerlink" title="Output NULL"></a>Output NULL</h2><p>To output null as a value, should use another select clause as a shell, for example:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> (</span><br><span class="line">	<span class="keyword">select</span> <span class="keyword">distinct</span> salary <span class="keyword">as</span> SecondHighestSalary</span><br><span class="line">	<span class="keyword">from</span> Employee</span><br><span class="line">	<span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span></span><br><span class="line">	limit <span class="number">1</span> <span class="keyword">offset</span> <span class="number">1</span></span><br><span class="line">) <span class="keyword">as</span> SecondHighestSalary</span><br></pre></td></tr></table></figure>
 <p>The clause will output the second higher salary but cannot output “NULL” if the database is null. The shell clause will transfer them to the null.</p>

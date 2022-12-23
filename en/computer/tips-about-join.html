@@ -19,16 +19,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="left and right join are outer join. What happens after left joins? Example: [[183. Customers Who Never Order]] 12345678910111213141516171819Create table If Not Exists Customers (id int, name varchar(2">
+    <meta name="description" content="left and right join are outer join.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tips About Join">
 <meta property="og:url" content="http://localhost:4000/en/computer/tips-about-join.html">
 <meta property="og:site_name" content="XCYS">
-<meta property="og:description" content="left and right join are outer join. What happens after left joins? Example: [[183. Customers Who Never Order]] 12345678910111213141516171819Create table If Not Exists Customers (id int, name varchar(2">
+<meta property="og:description" content="left and right join are outer join.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png">
 <meta property="article:published_time" content="2022-12-18T05:32:02.000Z">
-<meta property="article:modified_time" content="2022-12-18T05:32:45.147Z">
+<meta property="article:modified_time" content="2022-12-23T22:10:45.914Z">
 <meta property="article:author" content="Xingchengyusi">
 <meta property="article:tag" content="sql">
 <meta property="article:tag" content="data science">
@@ -194,9 +194,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-12-17 21:32:02 / Modified: 21:32:45" itemprop="dateCreated datePublished" datetime="2022-12-17T21:32:02-08:00">2022-12-17</time>
+      <time title="Created: 2022-12-17 21:32:02" itemprop="dateCreated datePublished" datetime="2022-12-17T21:32:02-08:00">2022-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-12-23 14:10:45" itemprop="dateModified" datetime="2022-12-23T14:10:45-08:00">2022-12-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -219,6 +225,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <p><img src="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png"><br><code>left</code> and <code>right</code> join are outer join.</p>
+<span id="more"></span>
+
 <p>What happens after left joins? Example: [[183. Customers Who Never Order]]</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span> If <span class="keyword">Not</span> <span class="keyword">Exists</span> Customers (id <span class="type">int</span>, name <span class="type">varchar</span>(<span class="number">255</span>))</span><br><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span> If <span class="keyword">Not</span> <span class="keyword">Exists</span> Orders (id <span class="type">int</span>, customerId <span class="type">int</span>)</span><br><span class="line"><span class="keyword">Truncate</span> <span class="keyword">table</span> Customers</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (id, name) <span class="keyword">values</span> (<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;Joe&#x27;</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (id, name) <span class="keyword">values</span> (<span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;Henry&#x27;</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (id, name) <span class="keyword">values</span> (<span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;Sam&#x27;</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (id, name) <span class="keyword">values</span> (<span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;Max&#x27;</span>)</span><br><span class="line"><span class="keyword">Truncate</span> <span class="keyword">table</span> Orders</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Orders (id, customerId) <span class="keyword">values</span> (<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;3&#x27;</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Orders (id, customerId) <span class="keyword">values</span> (<span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"></span><br><span class="line"># if run</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Orders</span><br><span class="line"><span class="keyword">ON</span> Customers.id <span class="operator">=</span> Orders.customerId</span><br><span class="line"></span><br><span class="line"># <span class="keyword">result</span> <span class="keyword">are</span></span><br><span class="line">&#123;&quot;headers&quot;: [&quot;id&quot;, &quot;name&quot;, &quot;id&quot;, &quot;customerId&quot;], &quot;values&quot;: [[<span class="number">1</span>, &quot;Joe&quot;, <span class="number">2</span>, <span class="number">1</span>], [<span class="number">2</span>, &quot;Henry&quot;, <span class="keyword">null</span>, <span class="keyword">null</span>], [<span class="number">3</span>, &quot;Sam&quot;, <span class="number">1</span>, <span class="number">3</span>], [<span class="number">4</span>, &quot;Max&quot;, <span class="keyword">null</span>, <span class="keyword">null</span>]]&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Without-ON"><a href="#Without-ON" class="headerlink" title="Without ON"></a>Without ON</h2><p>In the left or right join, ON is necessary. However, in MySQL and <code>join</code>, ON is optional. In this case, using <code>join</code> without <code>on</code> will produce a cross join.</p>

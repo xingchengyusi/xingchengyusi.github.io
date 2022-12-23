@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="combine two varcharconcat(&#39;a&#39;, &#39;b&#39;)in group: group_concate(distinct name order by name separator &#39;,&#39;) upper case and lower caseupper(&#39;a&#39;) and lower(&#39;a&#39;) select">
+    <meta name="description" content="combine two varcharconcat(&#39;a&#39;, &#39;b&#39;)in group: group_concate(distinct name order by name separator &#39;,&#39;)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Some Useful Functions in SQL">
 <meta property="og:url" content="http://localhost:4000/en/computer/some-useful-functions-in-sql.html">
 <meta property="og:site_name" content="XCYS">
-<meta property="og:description" content="combine two varcharconcat(&#39;a&#39;, &#39;b&#39;)in group: group_concate(distinct name order by name separator &#39;,&#39;) upper case and lower caseupper(&#39;a&#39;) and lower(&#39;a&#39;) select">
+<meta property="og:description" content="combine two varcharconcat(&#39;a&#39;, &#39;b&#39;)in group: group_concate(distinct name order by name separator &#39;,&#39;)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-18T05:35:27.000Z">
-<meta property="article:modified_time" content="2022-12-18T05:36:02.511Z">
+<meta property="article:modified_time" content="2022-12-23T22:10:45.896Z">
 <meta property="article:author" content="Xingchengyusi">
 <meta property="article:tag" content="sql">
 <meta property="article:tag" content="data science">
@@ -192,9 +192,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-12-17 21:35:27 / Modified: 21:36:02" itemprop="dateCreated datePublished" datetime="2022-12-17T21:35:27-08:00">2022-12-17</time>
+      <time title="Created: 2022-12-17 21:35:27" itemprop="dateCreated datePublished" datetime="2022-12-17T21:35:27-08:00">2022-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-12-23 14:10:45" itemprop="dateModified" datetime="2022-12-23T14:10:45-08:00">2022-12-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -217,6 +223,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="combine-two-varchar"><a href="#combine-two-varchar" class="headerlink" title="combine two varchar"></a>combine two varchar</h2><p><code>concat(&#39;a&#39;, &#39;b&#39;)</code><br>in <em>group</em>: <code>group_concate(distinct name order by name separator &#39;,&#39;)</code></p>
+<span id="more"></span>
+
 <h2 id="upper-case-and-lower-case"><a href="#upper-case-and-lower-case" class="headerlink" title="upper case and lower case"></a>upper case and lower case</h2><p><code>upper(&#39;a&#39;)</code> and <code>lower(&#39;a&#39;)</code></p>
 <h2 id="select-char-in-varchar"><a href="#select-char-in-varchar" class="headerlink" title="select char in varchar"></a>select char in varchar</h2><ol>
 <li>select n char from left or right side <code>left(name, n)</code> or <code>right(name, n)</code></li>

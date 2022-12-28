@@ -19,23 +19,34 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="XCYS">
-<meta property="og:url" content="http://localhost:4000/archives/2022/12/page/2/index.html">
+    <meta name="description" content="Hello, as a Pythonista, sometimes I have been confused about how to use import correctly and efficiently. This article will cover all things I know about it.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Import in Python">
+<meta property="og:url" content="http://localhost:4000/en/computer/import-in-python.html">
 <meta property="og:site_name" content="XCYS">
+<meta property="og:description" content="Hello, as a Pythonista, sometimes I have been confused about how to use import correctly and efficiently. This article will cover all things I know about it.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://localhost:4000/import-in-python/import-module.drawio.svg">
+<meta property="og:image" content="http://localhost:4000/import-module.drawio.svg">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import-module.drawio.svg">
+<meta property="article:published_time" content="2022-12-23T22:20:48.000Z">
+<meta property="article:modified_time" content="2022-12-28T07:14:33.313Z">
 <meta property="article:author" content="Xingchengyusi">
+<meta property="article:tag" content="computer">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="computer language">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/import-in-python/import-module.drawio.svg">
 
 
-<link rel="canonical" href="http://localhost:4000/archives/2022/12/page/2/">
+<link rel="canonical" href="http://localhost:4000/en/computer/import-in-python.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"archives/2022/12/page/2/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://localhost:4000/en/computer/import-in-python.html","path":"en/computer/import-in-python.html","title":"Import in Python"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Archive | XCYS</title>
+<title>Import in Python | XCYS</title>
   
 
 
@@ -70,7 +81,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">XCYS</h1>
+      <p class="site-title">XCYS</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -96,7 +107,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -109,6 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-do-we-import"><span class="nav-number">1.</span> <span class="nav-text">What do we import?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import"><span class="nav-number">2.</span> <span class="nav-text">Import</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -146,92 +158,155 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 13 posts in total. Keep on posting.</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/en/computer/import-in-python.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xingchengyusi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XCYS">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Import in Python | XCYS">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Import in Python
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-12-23 14:20:48" itemprop="dateCreated datePublished" datetime="2022-12-23T14:20:48-08:00">2022-12-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-12-27 23:14:33" itemprop="dateModified" datetime="2022-12-27T23:14:33-08:00">2022-12-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/computer/" itemprop="url" rel="index"><span itemprop="name">computer</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Hello, as a Pythonista, sometimes I have been confused about how to use <code>import</code> correctly and efficiently. This article will cover all things I know about it.</p>
+<span id="more"></span>
+
+<h1 id="What-do-we-import"><a href="#What-do-we-import" class="headerlink" title="What do we import?"></a>What do we import?</h1><p>In an application, we often use <code>import</code> to import another module or package and let the following code could use them. So in the first part, I will discuss what modules and packages are.</p>
+<p>A module is an object that serves as an organizational unit of Python code. It has a namespace containing arbitrary Python objects. Also, it is a concept of Python runtime. In coding, it often corresponds to a <code>.py</code> file.</p>
+<p>A package is a special module with <code>__path__</code> attribute. In coding, it often corresponds to a dictionary that contain multiple <code>.py</code> files and dictionaries.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>In OS</th>
+<th>In Python</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>module</td>
+<td>file</td>
+<td>object</td>
+</tr>
+<tr>
+<td>packge</td>
+<td>dictionary</td>
+<td>object with <code>__path__</code> attribute</td>
+</tr>
+</tbody></table>
+<h1 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h1><p>Import change file or dictionary to a Python module or package. For exmaple,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mytest</span><br></pre></td></tr></table></figure>
+
+<p>In this process, Python will:</p>
+<ol>
+<li>Get the name <code>mytest</code> as a string.</li>
+<li>Check a module name <code>mytest</code> exists <strong>in cache</strong>.</li>
+<li>Begin to find module <code>mytest</code>.</li>
+<li>Find the module in <strong>build-in module</strong> (<code>sys</code>, <code>os</code>).</li>
+<li>Find file could be loaded as <code>mytest</code> in <code>sys.path</code> as the sequence.<ul>
+<li>If Python finds a file in the first dictionary, it will stop finding and begin loading.</li>
+</ul>
+</li>
+<li>Building a module: run the file in an independent namespace.</li>
+<li>Update cache.</li>
+<li>Assign the object to variable <code>mytest</code>.</li>
+</ol>
+<p><img src="/import-in-python/import-module.drawio.svg"></p>
+<p><img src="/import-module.drawio.svg"></p>
+<img src="/en/computer/import-in-python/import-module.drawio.svg" class="" title="Import module flow chart">
+
+<p>All set. Now we could use the variable!</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-17T21:23:59-08:00"
-              content="2022-12-17">
-          12-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/en/computer/agile-scrum.html" itemprop="url">
-            <span itemprop="name">Agile Scrum</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/computer/" rel="tag"># computer</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/computer-language/" rel="tag"># computer language</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/en/computer/generative-deep-learning.html" rel="prev" title="Generative Deep Learning">
+                  <i class="fa fa-chevron-left"></i> Generative Deep Learning
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-17T21:05:02-08:00"
-              content="2022-12-17">
-          12-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/en/computer/self-document-code.html" itemprop="url">
-            <span itemprop="name">Self-Document Code</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-17T14:17:20-08:00"
-              content="2022-12-17">
-          12-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/en/computer/git-commands.html" itemprop="url">
-            <span itemprop="name">Git Commands</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/archives/2022/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2022/12/">1</a><span class="page-number current">2</span>
-  </nav>
+
+
+
 
 </div>
   </main>

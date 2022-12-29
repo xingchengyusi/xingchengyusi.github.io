@@ -26,17 +26,19 @@
 <meta property="og:site_name" content="XCYS">
 <meta property="og:description" content="Hello, as a Pythonista, sometimes I have been confused about how to use import correctly and efficiently. This article will cover all things I know about it.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://localhost:4000/import-in-python/import-module.drawio.svg">
-<meta property="og:image" content="http://localhost:4000/import-module.drawio.svg">
 <meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import-module.drawio.svg">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import-module-multiple-times.png">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import_class_from_a_file.png">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import_file_from_custom_syspath_1.png">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import_file_from_custom_syspath_2.png">
 <meta property="article:published_time" content="2022-12-23T22:20:48.000Z">
-<meta property="article:modified_time" content="2022-12-28T07:14:33.313Z">
+<meta property="article:modified_time" content="2022-12-29T07:39:12.747Z">
 <meta property="article:author" content="Xingchengyusi">
 <meta property="article:tag" content="computer">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="computer language">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://localhost:4000/import-in-python/import-module.drawio.svg">
+<meta name="twitter:image" content="http://localhost:4000/en/computer/import-in-python/import-module.drawio.svg">
 
 
 <link rel="canonical" href="http://localhost:4000/en/computer/import-in-python.html">
@@ -120,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-do-we-import"><span class="nav-number">1.</span> <span class="nav-text">What do we import?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import"><span class="nav-number">2.</span> <span class="nav-text">Import</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-do-we-import"><span class="nav-number">1.</span> <span class="nav-text">What do we import?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-module"><span class="nav-number">2.</span> <span class="nav-text">Import module</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Special-Scenario"><span class="nav-number">2.1.</span> <span class="nav-text">Special Scenario</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-a-module-multiple-times"><span class="nav-number">2.1.1.</span> <span class="nav-text">Import a module multiple times</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-class-from-a-file"><span class="nav-number">2.1.2.</span> <span class="nav-text">Import class from a file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-file-from-custom-sys-path-1"><span class="nav-number">2.1.3.</span> <span class="nav-text">Import file from custom sys.path 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-file-from-custom-sys-path-2"><span class="nav-number">2.1.4.</span> <span class="nav-text">Import file from custom sys.path 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-package"><span class="nav-number">3.</span> <span class="nav-text">Import package</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -205,7 +207,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-12-27 23:14:33" itemprop="dateModified" datetime="2022-12-27T23:14:33-08:00">2022-12-27</time>
+      <time title="Modified: 2022-12-28 23:39:12" itemprop="dateModified" datetime="2022-12-28T23:39:12-08:00">2022-12-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,7 +254,7 @@
 <td>object with <code>__path__</code> attribute</td>
 </tr>
 </tbody></table>
-<h1 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h1><p>Import change file or dictionary to a Python module or package. For exmaple,</p>
+<h1 id="Import-module"><a href="#Import-module" class="headerlink" title="Import module"></a>Import module</h1><p>Import the change file to a Python module. For example,</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mytest</span><br></pre></td></tr></table></figure>
 
 <p>In this process, Python will:</p>
@@ -269,11 +271,44 @@
 <li>Update cache.</li>
 <li>Assign the object to variable <code>mytest</code>.</li>
 </ol>
-<p><img src="/import-in-python/import-module.drawio.svg"></p>
-<p><img src="/import-module.drawio.svg"></p>
 <img src="/en/computer/import-in-python/import-module.drawio.svg" class="" title="Import module flow chart">
 
 <p>All set. Now we could use the variable!</p>
+<h2 id="Special-Scenario"><a href="#Special-Scenario" class="headerlink" title="Special Scenario"></a>Special Scenario</h2><p>I will use some special scenarios in this section to show the details.</p>
+<h3 id="Import-a-module-multiple-times"><a href="#Import-a-module-multiple-times" class="headerlink" title="Import a module multiple times"></a>Import a module multiple times</h3><p>For instance, there is a Python file <code>test.py</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">T</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;test is imported.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Now, we import it in <code>example1.py</code> two times. What will happen? How many times of above string will be printed?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> test</span><br><span class="line"><span class="keyword">import</span> test</span><br></pre></td></tr></table></figure>
+
+<p>The answer is <strong>1</strong> time. Since after the first run, Python will store this object in the cache, and next time, it will check and load from the cache directly.</p>
+<img src="/en/computer/import-in-python/import-module-multiple-times.png" class="">
+
+<h3 id="Import-class-from-a-file"><a href="#Import-class-from-a-file" class="headerlink" title="Import class from a file"></a>Import class from a file</h3><p>If there is a Python file <code>test.py</code> contains a class <code>T</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">T</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;test is imported.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>If in the following code, What is the output of the following code?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> test <span class="keyword">import</span> T</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;second&#x27;</span>)</span><br><span class="line"><span class="keyword">import</span> test</span><br></pre></td></tr></table></figure>
+
+<p>The answer is:</p>
+<img src="/en/computer/import-in-python/import_class_from_a_file.png" class="">
+
+<p>When Python imports a class inside a file, it will find and run the file to produce an object of this file. The only difference from importing the whole module is assigning the class to the variable, not the entire thing. Also, updating the cache will store the whole object, not just the class object. So the print sentence will run once when importing the class <code>T</code> before importing the whole <code>test</code>.</p>
+<h3 id="Import-file-from-custom-sys-path-1"><a href="#Import-file-from-custom-sys-path-1" class="headerlink" title="Import file from custom sys.path 1"></a>Import file from custom sys.path 1</h3><p>Consider the following code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test</span><br></pre></td></tr></table></figure>
+
+<p>What is the output of the program?</p>
+<img src="/en/computer/import-in-python/import_file_from_custom_syspath_1.png" class="">
+
+<p>Well, the program will report an error and import nothing. Since <code>test</code> is not in the cache and is not a built-in package, Python will find it in dictionaries of <code>sys.path</code>. However, the program sets this list to empty, and Python will find nothing absolutely.</p>
+<h3 id="Import-file-from-custom-sys-path-2"><a href="#Import-file-from-custom-sys-path-2" class="headerlink" title="Import file from custom sys.path 2"></a>Import file from custom sys.path 2</h3><p>Consider the following code. Unlike above, I have two same-name files in sub-folder <code>dir1</code> and <code>dir2</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path = [<span class="string">&#x27;/Users/cz/projects/example/dir2&#x27;</span>, <span class="string">&#x27;/Users/cz/projects/example/dir1&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(sys.path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test</span><br></pre></td></tr></table></figure>
+
+<p>What is the output of the program?</p>
+<img src="/en/computer/import-in-python/import_file_from_custom_syspath_2.png" class="">
+
+<p>According to the above rules, <em>Python</em> will search the file in <code>sys.path</code> as a sequence. If <em>Python</em> finds the target file in the first folder, it will terminate the search and never look up the second one. In this case, only the <code>test.py</code> file in <code>dir2</code> will be imported.</p>
+<h1 id="Import-package"><a href="#Import-package" class="headerlink" title="Import package"></a>Import package</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>Special Thanks <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1K24y1k7XA">Tian Gao’s detailed video</a> in Bilibili. I highly recommend everyone who knows Chinese should review it.</p>
 
     </div>
 

@@ -31,12 +31,15 @@
 <meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import_class_from_a_file.png">
 <meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import_file_from_custom_syspath_1.png">
 <meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/import_file_from_custom_syspath_2.png">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/relative_import_fail.png">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/relative_import_error.png">
+<meta property="og:image" content="http://localhost:4000/en/computer/import-in-python/access_module_when_import_package.png">
 <meta property="article:published_time" content="2022-12-23T22:20:48.000Z">
-<meta property="article:modified_time" content="2022-12-29T07:39:12.747Z">
+<meta property="article:modified_time" content="2022-12-30T02:41:40.361Z">
 <meta property="article:author" content="Xingchengyusi">
+<meta property="article:tag" content="computer">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="computer language">
-<meta property="article:tag" content="computer">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://localhost:4000/en/computer/import-in-python/import-module.drawio.svg">
 
@@ -122,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-do-we-import"><span class="nav-number">1.</span> <span class="nav-text">What do we import?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-module"><span class="nav-number">2.</span> <span class="nav-text">Import module</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Special-Scenario"><span class="nav-number">2.1.</span> <span class="nav-text">Special Scenario</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-a-module-multiple-times"><span class="nav-number">2.1.1.</span> <span class="nav-text">Import a module multiple times</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-class-from-a-file"><span class="nav-number">2.1.2.</span> <span class="nav-text">Import class from a file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-file-from-custom-sys-path-1"><span class="nav-number">2.1.3.</span> <span class="nav-text">Import file from custom sys.path 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-file-from-custom-sys-path-2"><span class="nav-number">2.1.4.</span> <span class="nav-text">Import file from custom sys.path 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-package"><span class="nav-number">3.</span> <span class="nav-text">Import package</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-do-we-import"><span class="nav-number">1.</span> <span class="nav-text">What do we import?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-module"><span class="nav-number">2.</span> <span class="nav-text">Import module</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Special-Scenario"><span class="nav-number">2.1.</span> <span class="nav-text">Special Scenario</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-a-module-multiple-times"><span class="nav-number">2.1.1.</span> <span class="nav-text">Import a module multiple times</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-class-from-a-file"><span class="nav-number">2.1.2.</span> <span class="nav-text">Import class from a file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-file-from-custom-sys-path-1"><span class="nav-number">2.1.3.</span> <span class="nav-text">Import file from custom sys.path 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-file-from-custom-sys-path-2"><span class="nav-number">2.1.4.</span> <span class="nav-text">Import file from custom sys.path 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-package"><span class="nav-number">3.</span> <span class="nav-text">Import package</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Relative-Import"><span class="nav-number">3.1.</span> <span class="nav-text">Relative Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Special-Scenario-1"><span class="nav-number">3.2.</span> <span class="nav-text">Special Scenario</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-module-When-importing-package"><span class="nav-number">3.2.1.</span> <span class="nav-text">Access module When importing package</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -207,7 +210,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-12-28 23:39:12" itemprop="dateModified" datetime="2022-12-28T23:39:12-08:00">2022-12-28</time>
+      <time title="Modified: 2022-12-29 18:41:40" itemprop="dateModified" datetime="2022-12-29T18:41:40-08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -262,7 +265,7 @@
 <li>Get the name <code>mytest</code> as a string.</li>
 <li>Check a module name <code>mytest</code> exists <strong>in cache</strong>.</li>
 <li>Begin to find module <code>mytest</code>.</li>
-<li>Find the module in <strong>build-in module</strong> (<code>sys</code>, <code>os</code>).</li>
+<li>Find the module in <strong>built-in module</strong> (<code>sys</code>, <code>os</code>).</li>
 <li>Find file could be loaded as <code>mytest</code> in <code>sys.path</code> as the sequence.<ul>
 <li>If Python finds a file in the first dictionary, it will stop finding and begin loading.</li>
 </ul>
@@ -295,7 +298,7 @@
 
 <p>When Python imports a class inside a file, it will find and run the file to produce an object of this file. The only difference from importing the whole module is assigning the class to the variable, not the entire thing. Also, updating the cache will store the whole object, not just the class object. So the print sentence will run once when importing the class <code>T</code> before importing the whole <code>test</code>.</p>
 <h3 id="Import-file-from-custom-sys-path-1"><a href="#Import-file-from-custom-sys-path-1" class="headerlink" title="Import file from custom sys.path 1"></a>Import file from custom sys.path 1</h3><p>Consider the following code:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path = []</span><br><span class="line"><span class="built_in">print</span>(sys.path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> test</span><br></pre></td></tr></table></figure>
 
 <p>What is the output of the program?</p>
 <img src="/en/computer/import-in-python/import_file_from_custom_syspath_1.png" class="">
@@ -308,7 +311,29 @@
 <img src="/en/computer/import-in-python/import_file_from_custom_syspath_2.png" class="">
 
 <p>According to the above rules, <em>Python</em> will search the file in <code>sys.path</code> as a sequence. If <em>Python</em> finds the target file in the first folder, it will terminate the search and never look up the second one. In this case, only the <code>test.py</code> file in <code>dir2</code> will be imported.</p>
-<h1 id="Import-package"><a href="#Import-package" class="headerlink" title="Import package"></a>Import package</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>Special Thanks <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1K24y1k7XA">Tian Gao’s detailed video</a> in Bilibili. I highly recommend everyone who knows Chinese should review it.</p>
+<h1 id="Import-package"><a href="#Import-package" class="headerlink" title="Import package"></a>Import package</h1><p>Since the package is a particular module, importing a package is similar to importing a module. If <em>Python</em> imports a package, <em>Python</em> will run the <code>__init__.py</code> in an individual namespace instead of running the imported file. For instance,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mypackage.mymodule</span><br><span class="line"><span class="keyword">from</span> package <span class="keyword">import</span> mymodule</span><br></pre></td></tr></table></figure>
+
+<p>The first sentence will let <em>Python</em> search the file named <code>mymodule</code> in the folder named <code>mypackage</code>. The <em>Python</em> will load and assign the package itself and the module differently from the second sentence. In the second sentence, <em>Python</em> will run the package, store it in the cache first (same as the first sentence), and only assign the <code>mymodule</code> object to the string.</p>
+<h2 id="Relative-Import"><a href="#Relative-Import" class="headerlink" title="Relative Import"></a>Relative Import</h2><p>Sometimes I need to import file in the same package, and the relative relationship between those modules are knowable and stable.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mypackage.mymodule <span class="keyword">import</span> f</span><br><span class="line"><span class="comment"># equal to</span></span><br><span class="line"><span class="keyword">from</span> .mymodule <span class="keyword">import</span> f</span><br></pre></td></tr></table></figure>
+
+<p>Every relative import will find the absolute path first and import second. Python will get the path according to the package of the current module. In this case, relative import only could use for the module in the package. If you run a file with relative import directly, Python cannot know which package it belongs to since it does not have <code>__package__</code> attribute and load it as the main module. Here is an example.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> .mymodule <span class="keyword">import</span> M</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;import another module&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/en/computer/import-in-python/relative_import_fail.png" class="">
+
+<img src="/en/computer/import-in-python/relative_import_error.png" class="">
+
+<h2 id="Special-Scenario-1"><a href="#Special-Scenario-1" class="headerlink" title="Special Scenario"></a>Special Scenario</h2><p>I will use some interesting scenarios in this section to show the details.</p>
+<h3 id="Access-module-When-importing-package"><a href="#Access-module-When-importing-package" class="headerlink" title="Access module When importing package"></a>Access module When importing package</h3><p>Consider the following code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mypakcage has a empty __init__ file.</span></span><br><span class="line"><span class="keyword">import</span> package</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dir</span>(mypackage.mymodule))</span><br></pre></td></tr></table></figure>
+
+<p>What is the output of the program?</p>
+<img src="/en/computer/import-in-python/access_module_when_import_package.png" class="">
+
+<p><em>Python</em> will give an <strong>AttributeError</strong> and tell you module ‘mypackage’ has no attribute ‘mymodule’. The reason is that when importing <code>mypakage</code>, Python will only run the <code>__init__.py</code> and do nothing else. So you cannot directly access the module inside the package. However, if you want to, you could do something in <code>__init__.py</code> file.</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>Special Thanks <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1K24y1k7XA">Tian Gao’s detailed video</a> in Bilibili. I highly recommend everyone who knows Chinese should review it.</p>
 
     </div>
 
@@ -318,9 +343,9 @@
 
     <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/computer/" rel="tag"># computer</a>
               <a href="/tags/python/" rel="tag"># python</a>
               <a href="/tags/computer-language/" rel="tag"># computer language</a>
-              <a href="/tags/computer/" rel="tag"># computer</a>
           </div>
 
         

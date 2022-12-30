@@ -40,7 +40,7 @@ In this process, Python will:
 1. Get the name `mytest` as a string.
 2. Check a module name `mytest` exists **in cache**.
 3. Begin to find module `mytest`.
-4. Find the module in **build-in module** (`sys`, `os`).
+4. Find the module in **built-in module** (`sys`, `os`).
 5. Find file could be loaded as `mytest` in `sys.path` as the sequence.
    - If Python finds a file in the first dictionary, it will stop finding and begin loading.
 6. Building a module: run the file in an independent namespace.
@@ -111,6 +111,7 @@ Consider the following code:
 ```python
 import sys
 sys.path = []
+print(sys.path)
 
 import test
 ```
@@ -140,6 +141,58 @@ What is the output of the program?
 According to the above rules, *Python* will search the file in `sys.path` as a sequence. If *Python* finds the target file in the first folder, it will terminate the search and never look up the second one. In this case, only the `test.py` file in `dir2` will be imported.
 
 # Import package
+
+Since the package is a particular module, importing a package is similar to importing a module. If *Python* imports a package, *Python* will run the `__init__.py` in an individual namespace instead of running the imported file. For instance,
+
+```python
+import mypackage.mymodule
+from package import mymodule
+```
+
+The first sentence will let *Python* search the file named `mymodule` in the folder named `mypackage`. The *Python* will load and assign the package itself and the module differently from the second sentence. In the second sentence, *Python* will run the package, store it in the cache first (same as the first sentence), and only assign the `mymodule` object to the string.
+
+## Relative Import
+
+Sometimes I need to import file in the same package, and the relative relationship between those modules are knowable and stable.
+
+```python
+from mypackage.mymodule import f
+# equal to
+from .mymodule import f
+```
+
+Every relative import will find the absolute path first and import second. Python will get the path according to the package of the current module. In this case, relative import only could use for the module in the package. If you run a file with relative import directly, Python cannot know which package it belongs to since it does not have `__package__` attribute and load it as the main module. Here is an example.
+
+```python
+from .mymodule import M
+
+print('import another module')
+```
+
+{% asset_img relative_import_fail.png %}
+
+{% asset_img relative_import_error.png %}
+
+## Special Scenario
+
+I will use some interesting scenarios in this section to show the details.
+
+### Access module When importing package
+
+Consider the following code:
+
+```python
+# mypakcage has a empty __init__ file.
+import package
+
+print(dir(mypackage.mymodule))
+```
+
+What is the output of the program?
+
+{% asset_img access_module_when_import_package.png %}
+
+*Python* will give an **AttributeError** and tell you module 'mypackage' has no attribute 'mymodule'. The reason is that when importing `mypakage`, Python will only run the `__init__.py` and do nothing else. So you cannot directly access the module inside the package. However, if you want to, you could do something in `__init__.py` file.
 
 # Reference
 

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# update hexo
+npm update -g hexo-cli
+npm update -g hexo
+
 # hexo deploy
 hexo g
 hexo clean

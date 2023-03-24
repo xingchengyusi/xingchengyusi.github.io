@@ -7,7 +7,7 @@ tags:
 - ai
 - machine learning
 - generative
-- python
+- python code
 category:
 - computer
 ---

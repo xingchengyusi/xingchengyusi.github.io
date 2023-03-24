@@ -3,9 +3,8 @@ title: Import in Python
 lang: en
 date: 2022-12-23 14:20:48
 tags:
-- computer language
 - computer
-- python
+- python language
 category:
 - computer
 ---

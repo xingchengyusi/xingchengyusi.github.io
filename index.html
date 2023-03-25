@@ -186,7 +186,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-24 01:04:33 / Modified: 20:17:27" itemprop="dateCreated datePublished" datetime="2023-03-24T01:04:33-07:00">2023-03-24</time>
+      <time title="Created: 2023-03-24 01:04:33 / Modified: 20:21:53" itemprop="dateCreated datePublished" datetime="2023-03-24T01:04:33-07:00">2023-03-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -231,22 +231,14 @@
 <td>Unique</td>
 </tr>
 </tbody></table>
-<p>For example, we have class variables <code>a</code> and <code>b</code>, and instance variables <code>c</code>.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Example</span>:</span><br><span class="line">    a = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">    b = <span class="string">&#x27;b&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, v</span>):</span><br><span class="line">        self.c = v</span><br></pre></td></tr></table></figure>
-
-<h1 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h1><h2 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h2><p>From the above example, we can see that the class variables are pre-set by definition, but the instance variables should initialize by the instance initialization.</p>
-<h2 id="Calling"><a href="#Calling" class="headerlink" title="Calling"></a>Calling</h2><p>For class variables, we could call it by any instance of the class, or just use the class name. For instance variables, we can only call it by the corresponding instance. For instance:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">e1 = Example(<span class="number">1</span>)</span><br><span class="line">e2 = Example(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(e1.a) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(e2.a) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(Example.a) <span class="comment"># a</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(e1.c) <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">print</span>(e2.c) <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Modification"><a href="#Modification" class="headerlink" title="Modification"></a>Modification</h2><p>Since class variables belong to the class itself, all instances of the same class will share the same values of those variables. Edit the value of class variables though one instance will be reflected when calling the same variable by other instances or classes.</p>
-<p>Following the above instance, we have:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(Example.a) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(Example.b) <span class="comment"># b</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(e1.c) <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">print</span>(e2.c) <span class="comment"># 2</span></span><br><span class="line"></span><br><span class="line">Example.a = <span class="string">&#x27;z&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(Example.a) <span class="comment"># z</span></span><br><span class="line"><span class="built_in">print</span>(e1.a) <span class="comment"># z</span></span><br><span class="line"><span class="built_in">print</span>(e2.a) <span class="comment"># z</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Priority"><a href="#Priority" class="headerlink" title="Priority"></a>Priority</h2><p>Similar to the local variables and global variables, the priority of the instance variable is higher than the class variable. That means if one instance and class variable has the same name with different values, Python will print the value of the instance first when calling by instance. For example, we define the class <code>Example2</code>:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Example2</span>:</span><br><span class="line">    a = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">    b = <span class="string">&#x27;b&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, v</span>):</span><br><span class="line">        self.c = v</span><br><span class="line">        self.a = v</span><br><span class="line"></span><br><span class="line">e3 = Example2(<span class="number">3</span>)</span><br><span class="line">e4 = Example2(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(e3.a) <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(e4.a) <span class="comment"># 4</span></span><br><span class="line"><span class="built_in">print</span>(Example2.a) <span class="comment"># a</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>In object-oriented programming, Python defines the class-level variables as class variables and sees the object level as instance variables. Initialization, calling, modification, and priority are four different points they have. Correct usage could help reduce the repeat and code smartly.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/en/computer/python-class-instance-variables.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

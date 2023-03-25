@@ -18,6 +18,8 @@ In Python class, there are two kinds of variables: class variables and instance 
 | Class | Class | Class Block | Share |
 | Instance | Instance | Inside functions | Unique |
 
+<!-- more -->
+
 For example, we have class variables `a` and `b`, and instance variables `c`.
 
 ```python
